@@ -11,4 +11,4 @@ AWS Lambda is an event-driven, serverless computing platform provided by Amazon 
 
 ## Reporting Issues
 
-You can report new issues at this link https://github.com/djuang1/awsv4auth-extension/issues.
+You can report new issues at this link https://github.com/djuang1/aws-lambda/issues.
