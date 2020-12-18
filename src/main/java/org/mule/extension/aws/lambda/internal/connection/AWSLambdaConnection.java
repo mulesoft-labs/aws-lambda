@@ -2,9 +2,7 @@ package org.mule.extension.aws.lambda.internal.connection;
 
 import com.amazonaws.services.lambda.AWSLambda;
 import com.amazonaws.services.lambda.AWSLambdaAsync;
-import com.amazonaws.services.lambda.model.AWSLambdaException;
-import com.amazonaws.services.lambda.model.ListFunctionsRequest;
-import com.amazonaws.services.lambda.model.ListFunctionsResult;
+import com.amazonaws.services.lambda.model.*;
 
 import org.mule.extension.aws.commons.internal.connection.AWSConnection;
 import org.mule.extension.aws.commons.internal.exception.AWSConnectionException;
@@ -17,6 +15,10 @@ public class AWSLambdaConnection extends AWSConnection<AWSLambda, AWSLambdaAsync
 
 	public ListFunctionsResult listFunctions(ListFunctionsRequest request){
 		return getAwsClient().listFunctions(request);
+	}
+
+	public InvokeResult invokeRequest(InvokeRequest request){
+		return getAwsClient().invoke(request);
 	}
 
 	@Override
