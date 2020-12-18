@@ -13,8 +13,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.mulesoft.connectors:mule-connector-commons:1.1.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.connectors:atlantic-commons:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: com.mulesoft.connectors:aws-connector-commons:2.2.4" level="project" />
     <orderEntry type="library" name="Maven: com.amazonaws:aws-java-sdk-sts:1.11.816" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.13" level="project" />
@@ -32,6 +30,8 @@
     <orderEntry type="library" name="Maven: com.amazonaws:aws-java-sdk-core:1.11.856" level="project" />
     <orderEntry type="library" name="Maven: software.amazon.ion:ion-java:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: com.amazonaws:jmespath-java:1.11.856" level="project" />
+    <orderEntry type="library" name="Maven: com.mulesoft.connectors:mule-connector-commons:1.3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.mule.connectors:atlantic-commons:1.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.runtime:mule-extensions-api:1.1.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.guava:guava:25.1-jre" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.code.findbugs:jsr305:3.0.2" level="project" />
@@ -130,8 +130,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.fasterxml.woodstox:woodstox-core:5.0.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.codehaus.woodstox:stax2-api:3.1.4" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.fasterxml:aalto-xml:1.0.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.mail:mail:1.4.7" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.activation:activation:1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.weave:debugger:2.1.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.weave:yaml-module:2.1.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.mule.syaml:syaml_2.12:0.0.10" level="project" />

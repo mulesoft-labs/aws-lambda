@@ -5,11 +5,14 @@ import com.amazonaws.services.lambda.AWSLambdaAsync;
 import com.amazonaws.services.lambda.AWSLambdaAsyncClientBuilder;
 import com.amazonaws.services.lambda.AWSLambdaClientBuilder;
 import org.mule.extension.aws.commons.internal.connection.AWSConnection;
-import org.mule.extension.aws.commons.internal.connection.provider.BasicConnectionProvider;
+import org.mule.extension.aws.commons.internal.connection.provider.AssumeRoleConnectionProvider;
+import org.mule.runtime.extension.api.annotation.Alias;
 
 import java.util.function.BiFunction;
 
-public class ParentAssumeRoleConnectionProvider<CONNECTION extends AWSConnection<AWSLambda, AWSLambdaAsync>> extends BasicConnectionProvider<AWSLambda, AWSLambdaAsync, AWSLambdaClientBuilder, AWSLambdaAsyncClientBuilder, CONNECTION> {
+@Alias("role")
+public class ParentAssumeRoleConnectionProvider<CONNECTION extends AWSConnection<AWSLambda, AWSLambdaAsync>> extends AssumeRoleConnectionProvider<AWSLambda, AWSLambdaAsync, AWSLambdaClientBuilder, AWSLambdaAsyncClientBuilder, CONNECTION> {
+
     public ParentAssumeRoleConnectionProvider(BiFunction<AWSLambda, AWSLambdaAsync, CONNECTION> connectionConstructor) {
         super(connectionConstructor, AWSLambdaClientBuilder.standard(), AWSLambdaAsyncClientBuilder.standard());
     }

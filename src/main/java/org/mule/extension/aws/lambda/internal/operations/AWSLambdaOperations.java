@@ -1,24 +1,16 @@
 package org.mule.extension.aws.lambda.internal.operations;
 
-import com.amazonaws.services.lambda.model.ListFunctionsRequest;
 import com.amazonaws.services.lambda.model.ListFunctionsResult;
-import org.mule.connectors.atlantic.commons.builder.execution.ExecutionBuilder;
 import org.mule.connectors.atlantic.commons.builder.lambda.function.BiFunction;
+import org.mule.extension.aws.commons.internal.operation.AWSOperations;
 import org.mule.extension.aws.lambda.internal.config.AWSLambdaConfiguration;
 import org.mule.extension.aws.lambda.internal.connection.AWSLambdaConnection;
 import org.mule.extension.aws.lambda.internal.error.provider.AWSLambdaErrorTypeProvider;
 import org.mule.extension.aws.lambda.internal.service.AWSLambdaService;
-import org.mule.extension.aws.lambda.internal.service.AWSLambdaServiceImpl;
 import org.mule.runtime.extension.api.annotation.error.Throws;
 import org.mule.runtime.extension.api.annotation.param.Config;
-import org.mule.runtime.extension.api.annotation.param.MediaType;
-import org.mule.runtime.extension.api.annotation.param.display.DisplayName;
-
 import org.mule.runtime.extension.api.annotation.param.Connection;
-
-import org.mule.extension.aws.commons.internal.operation.AWSOperations;
-
-import static org.mule.runtime.extension.api.annotation.param.MediaType.TEXT_PLAIN;
+import org.mule.runtime.extension.api.annotation.param.display.DisplayName;
 
 public class AWSLambdaOperations extends AWSOperations<AWSLambdaConfiguration, AWSLambdaConnection, AWSLambdaService>{
 
@@ -33,10 +25,9 @@ public class AWSLambdaOperations extends AWSOperations<AWSLambdaConfiguration, A
 	 */
 	@Throws(AWSLambdaErrorTypeProvider.class)
 	@DisplayName("List Lambda Functions")
-	@MediaType(TEXT_PLAIN)
 	public ListFunctionsResult listFunctions(@Config AWSLambdaConfiguration config,
-											 @Connection AWSLambdaConnection awsLambdaConnection) {
-		return null;
+											 @Connection AWSLambdaConnection connection) {
+		return newExecutionBuilder(config,connection).execute(AWSLambdaService::listFunctions);
 	}
 	
 

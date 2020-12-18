@@ -1,6 +1,7 @@
 package org.mule.extension.aws.lambda.internal.config;
 
 import org.mule.extension.aws.commons.internal.config.AWSConfig;
+import org.mule.extension.aws.lambda.internal.connection.provider.AssumeRoleConnectionProvider;
 import org.mule.extension.aws.lambda.internal.connection.provider.BasicConnectionProvider;
 import org.mule.extension.aws.lambda.internal.operations.AWSLambdaOperations;
 import org.mule.runtime.extension.api.annotation.Configuration;
@@ -14,7 +15,8 @@ import org.mule.runtime.extension.api.annotation.param.display.DisplayName;
         AWSLambdaOperations.class
 })
 @ConnectionProviders({
-        BasicConnectionProvider.class
+        BasicConnectionProvider.class,
+        AssumeRoleConnectionProvider.class
 })
 public class AWSLambdaConfiguration extends AWSConfig {
 

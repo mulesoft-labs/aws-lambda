@@ -5,18 +5,16 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.dejim</groupId>
-	<!-- You should replace the group id below with your organization id in Anypoint -->
-	<!-- <groupId>b85b361d-0842-4b70-af37-2723c2c3ae7e</groupId>  -->
 	<artifactId>aws-lambda</artifactId>
-	<version>1.0.5</version>
+	<version>1.0.6</version>
 	<packaging>mule-extension</packaging>
 	<name>AWS Lambda Connector - Mule 4</name>
-
+	
 	<parent>
-		<groupId>org.mule.extensions</groupId>
-		<artifactId>mule-modules-parent</artifactId>
-		<version>1.1.3</version>
-	</parent>
+        <groupId>com.mulesoft.connectors</groupId>
+        <artifactId>mule-connectivity-parent</artifactId>
+        <version>1.3.8</version>
+    </parent>
 
 	<properties>
 		<!-- Property added to comply with a faulty feature on SDK 1.1 which makes the connector fail. -->
@@ -25,35 +23,14 @@
 		</extensionsAnnotationProcessor>
 		<!-- Property added to comply with a faulty feature on SDK 1.1 which makes the connector fail. -->
 		<apt.phase>compile</apt.phase>
-		<!-- Remove when a new parent version with MTF is available -->
-		<mavenResourcesVersion>3.0.2</mavenResourcesVersion>
-		<!-- runtime version to run -->
-		<runtimeVersion>4.3.0-20201013</runtimeVersion>
-		<runtimeProduct>MULE_EE</runtimeProduct>
 	</properties>
-
-	<distributionManagement>
-		<repository>
-			<id>anypoint-exchange</id>
-			<name>Exchange Repository</name>
-			<url>https://maven.anypoint.mulesoft.com/api/v1/organizations/${project.groupId}/maven</url>
-			<layout>default</layout>
-		</repository>
-	</distributionManagement>
-
+	
 	<dependencies>
-		<dependency>
-			<groupId>com.mulesoft.connectors</groupId>
-			<artifactId>mule-connector-commons</artifactId>
-			<version>1.1.0</version>
-			<scope>provided</scope>
-		</dependency>
 		<dependency>
             <groupId>com.mulesoft.connectors</groupId>
             <artifactId>aws-connector-commons</artifactId>
             <version>2.2.4</version>
         </dependency>
-		<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-lambda -->
 		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk-lambda</artifactId>
