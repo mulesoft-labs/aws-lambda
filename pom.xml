@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.dejim</groupId>
 	<artifactId>aws-lambda</artifactId>
-	<version>1.0.6</version>
+	<version>1.0.8</version>
 	<packaging>mule-extension</packaging>
 	<name>AWS Lambda Connector - Mule 4</name>
 	
