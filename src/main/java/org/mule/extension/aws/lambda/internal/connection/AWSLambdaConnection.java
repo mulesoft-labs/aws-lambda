@@ -1,20 +1,30 @@
 package org.mule.extension.aws.lambda.internal.connection;
 
-import org.mule.extension.aws.lambda.internal.service.AWSLambdaClient;
+import com.amazonaws.services.lambda.AWSLambda;
+import com.amazonaws.services.lambda.AWSLambdaAsync;
+import com.amazonaws.services.lambda.model.AWSLambdaException;
+import com.amazonaws.services.lambda.model.ListFunctionsRequest;
+import com.amazonaws.services.lambda.model.ListFunctionsResult;
 
-public final class AWSLambdaConnection {
+import org.mule.extension.aws.commons.internal.connection.AWSConnection;
+import org.mule.extension.aws.commons.internal.exception.AWSConnectionException;
 
-  private AWSLambdaClient awsLambdaClient;
+public class AWSLambdaConnection extends AWSConnection<AWSLambda, AWSLambdaAsync>{
 
-  public AWSLambdaConnection(AWSLambdaClient awsLambdaClient) {
-    this.awsLambdaClient = awsLambdaClient;
-  }
+	public AWSLambdaConnection(AWSLambda awsClient, AWSLambdaAsync awsAsyncClient) {
+		super(awsClient, awsAsyncClient);
+	}
 
-  public AWSLambdaClient getAWSLambdaClient() {
-    return awsLambdaClient;
-  }
+	public ListFunctionsResult listFunctions(ListFunctionsRequest request){
+		return getAwsClient().listFunctions(request);
+	}
 
-  public void invalidate() {
-	  awsLambdaClient.getAWSLambdaClient().shutdown();
-  }
+	@Override
+    public void validate() throws AWSConnectionException {
+		try{
+			getAwsClient().listFunctions();
+		} catch (AWSLambdaException e) {
+			throw new AWSConnectionException("An error occurred while trying to validate the connection.", e);
+		}
+    }
 }
