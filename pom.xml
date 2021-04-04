@@ -4,9 +4,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-    <!--<groupId>com.dejim</groupId>-->
+    <groupId>com.dejim</groupId>
     <!--  You should replace the group id below with your organization id in anypoint -->
-    <groupId>b85b361d-0842-4b70-af37-2723c2c3ae7e</groupId>
+    <!--<groupId>b85b361d-0842-4b70-af37-2723c2c3ae7e</groupId>-->
 	<artifactId>aws-lambda</artifactId>
 	<version>1.0.13</version>
 	<packaging>mule-extension</packaging>
