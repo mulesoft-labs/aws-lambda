@@ -1,5 +1,7 @@
 # AWS Lambda Connector - Mule 4.x
 
+> :exclamation: **MuleSoft has released a productized version of the AWS Lambda Connector. You can find it in Anypoint Exchange [here](https://anypoint.mulesoft.com/exchange/com.mulesoft.connectors/mule4-amazon-lambda-connector).**
+
 AWS Lambda is an event-driven, serverless computing platform provided by Amazon as a part of Amazon Web Services. It is a computing service that runs code in response to events and automatically manages the computing resources required by that code.
 
 ### Instructions
